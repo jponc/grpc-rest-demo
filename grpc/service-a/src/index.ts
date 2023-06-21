@@ -10,7 +10,7 @@ const server = new Server();
 const uri = `0.0.0.0:${config.port}`;
 
 const serviceBClient = new ServiceBClient(
-  "0.0.0.0:8081",
+  config.serviceBHost,
   ChannelCredentials.createInsecure()
 );
 

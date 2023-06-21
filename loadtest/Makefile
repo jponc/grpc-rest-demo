@@ -6,3 +6,6 @@ run_k6_rest:
 
 run_k6_grpc:
 	k6 run grpc.js
+
+run_k6_grpc_go:
+	k6 run grpc-go.js

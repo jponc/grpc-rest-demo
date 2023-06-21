@@ -14,7 +14,7 @@ export const options = {
 
 export default () => {
   if (__ITER == 0) {
-    client.connect("0.0.0.0:9090", {
+    client.connect("0.0.0.0:7070", {
       plaintext: true,
     });
   }

@@ -8,7 +8,6 @@ export const createServerB = (): IServiceBServer => {
       call: ServerUnaryCall<PongRequest, PongResponse>,
       callback: sendUnaryData<PongResponse>
     ) => {
-      console.log("hey");
       const pongRequest = call.request;
 
       const pongResponse = new PongResponse();

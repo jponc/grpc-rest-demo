@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  rest-service-a:
+    build: ./rest/service-a
+    environment:
+      - PORT=8080
+      - SERVICE_B_HOST=http://rest-service-b:8081
+    ports:
+      - "8080:8080"
+
+  rest-service-b:
+    build: ./rest/service-b
+    environment:
+      - PORT=8081
+
+  grpc-service-a:
+    build: ./grpc/service-a
+    environment:
+      - PORT=9090
+      - SERVICE_B_HOST=grpc-service-b:9091
+    ports:
+      - "9090:9090"
+
+  grpc-service-b:
+    build: ./grpc/service-b
+    environment:
+      - PORT=9091
+
+  grpc-go-service-a:
+    build: ./grpc-go/service-a
+    environment:
+      - PORT=7070
+      - SERVICE_B_HOST=grpc-go-service-b:7071
+    ports:
+      - "7070:7070"
+
+  grpc-go-service-b:
+    build: ./grpc-go/service-b
+    environment:
+      - PORT=7071

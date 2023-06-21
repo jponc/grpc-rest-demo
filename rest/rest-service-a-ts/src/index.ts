@@ -10,6 +10,10 @@ type RequestBody = {
   name: string;
 };
 
+type ResponseBody = {
+  out: string;
+};
+
 type ServiceBResponse = {
   out: string;
 };
@@ -25,8 +29,8 @@ app.post("/hello", (req: Request, res: Response) => {
     const serviceBResBody = serviceBRes.data as ServiceBResponse;
 
     res.json({
-      ret: `${serviceBResBody.out} ... Done`,
-    });
+      out: `${serviceBResBody.out} ... Done`,
+    } as ResponseBody);
   })();
 });
 

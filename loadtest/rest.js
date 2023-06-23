@@ -19,6 +19,7 @@ export default function () {
     headers: {
       "Content-Type": "application/json",
     },
+    compression: "gzip",
   };
 
   const res = http.post(url, payload, params);

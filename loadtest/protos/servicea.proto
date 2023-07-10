@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package="./grpcrestdemopb";
+
+package dev.jponc.grpc_rest.servicea.v1;
+
+service ServiceA {
+  rpc Ping(PingRequest) returns (PingResponse) {}
+}
+
+message PingRequest {
+  string name = 1;
+}
+
+message PingResponse {
+  string out = 1;
+}

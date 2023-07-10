@@ -1,0 +1,16 @@
+syntax = "proto3";
+option go_package="./grpcrestdemopb";
+
+package dev.jponc.grpc_rest.serviceb.v1;
+
+service ServiceB {
+  rpc Pong(PongRequest) returns (PongResponse) {}
+}
+
+message PongRequest {
+  string message = 1;
+}
+
+message PongResponse {
+  string out = 1;
+}

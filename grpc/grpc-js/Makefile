@@ -1,7 +1,13 @@
-run_a:
+install_a:
+	cd service-a && npm install
+
+install_b:
+	cd service-b && npm install
+
+run_a: install_a
 	cd service-a && npm run build && SERVICE_B_HOST=0.0.0.0:9091 PORT=9090 npm run start
 
-run_b:
+run_b: install_b
 	cd service-b && npm run build && PORT=9091 npm start
 
 run:
